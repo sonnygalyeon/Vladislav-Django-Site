@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о сайте</title>
+    <link rel="stylesheet" href="{% static 'css/info_about.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+<script src="{% static 'scripts/about.js' %}"></script>
+<div class="container">
+    <header>
+        <h1>Добро пожаловать на форум для программистов!</h1>
+        <p>Обсуждайте идеи, делитесь опытом и находите решения вместе с единомышленниками.</p>
+    </header>
+
+    <section class="features">
+        <h2>Преимущества нашего форума</h2>
+        <ul>
+            <li>Обширное сообщество программистов всех уровней.</li>
+            <li>Темы по различным языкам программирования и технологиям.</li>
+            <li>Поддержка и советы от опытных разработчиков.</li>
+            <li>Возможность создания собственных тем и обсуждений.</li>
+            <li>Доступ к ресурсам и учебным материалам.</li>
+        </ul>
+    </section>
+
+    <section class="categories">
+        <h2>Категории обсуждений</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>PHP</li>
+            <li>Ruby</li>
+            <li>HTML/CSS</li>
+            <li>Алгоритмы и структуры данных</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Контакты</h2>
+        <p>Если у вас есть вопросы или предложения, свяжитесь с нами:</p>
+        <ul>
+            <li>Email: support@programmersforum.com</li>
+            <li>Телефон: +7 (123) 456-7890</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Форум для программистов. Все права защищены.</p>
+    </footer>
+</div>
+
+</body>
+</html>

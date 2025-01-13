@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"> <!-- Подключение CSS -->
+    <script src="{% static 'scripts/register.js' %}" defer></script> <!-- Подключение JS -->
+</head>
+<body>
+    <div class="container">
+        <form class="register-form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <h2>Регистрация</h2>
+            <div class="form-group">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" required>
+                <span class="error-message" id="username-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="password-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Подтверждение пароля</label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+                <span class="error-message" id="confirm-password-error"></span>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+            <div class="form-footer">
+                <a href="{% url 'login' %}">Уже есть аккаунт? Войти</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

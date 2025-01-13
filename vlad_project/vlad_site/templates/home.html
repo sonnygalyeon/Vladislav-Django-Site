@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форум Программистов</title>
+    <link rel="stylesheet"> <!-- Подключение CSS файла -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .welcome {
+            background: #e2e2e2;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .topics, .latest-posts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 48%;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Форум Программистов</h1>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">Темы</a>
+        <a href="#">Новые сообщения</a>
+        <a href="#">Поиск</a>
+        <a href="#">Профиль</a>
+        <a href="#">Помощь</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="welcome">
+        <h2>Добро пожаловать на форум программистов!</h2>
+        <p>Здесь вы можете обсудить свои проекты, задать вопросы и обменяться опытом с единомышленниками.</p>
+    </div>
+
+    <div class="topics">
+        <div class="box">
+            <h3>Популярные темы</h3>
+            <ul>
+                <li><a href="#">Тема 1: Заголовок обсуждения</a></li>
+                <li><a href="#">Тема 2: Заголовок обсуждения</a></li>
+                <li><a href="#">Тема 3: Заголовок обсуждения</a></li>
+                <li><a href="#">Тема 4: Заголовок обсуждения</a></li>
+                <li><a href="#">Тема 5: Заголовок обсуждения</a></li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h3>Последние сообщения</h3>
+            <ul>
+                <li><strong>Пользователь1:</strong> в теме "<em>Тема 1</em>" - *12 января, 10:00*</li>
+                <li><strong>Пользователь2:</strong> в теме "<em>Тема 2</em>" - *12 января, 09:30*</li>
+                <li><strong>Пользователь3:</strong> в теме "<em>Тема 3</em>" - *12 января, 09:00*</li>
+                <li><strong>Пользователь4:</strong> в теме "<em>Тема 4</em>" - *11 января, 18:45*</li>
+                <li><strong>Пользователь5:</strong> в теме "<em>Тема 5</em>" - *11 января, 17:15*</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Форум Программистов. Все права защищены. |
+        <a href="#" style="color:white;">Политика конфиденциальности</a> |
+        <a href="#" style="color:white;">Условия использования</a>
+    </footer>
+
+</div>
+
+</body>
+</html>

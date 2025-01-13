@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url("../images/background.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff; /* Белый фон */
+    width: 400px; /* Ширина формы */
+    padding: 30px; /* Внутренние отступы */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень вокруг контейнера */
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовок формы */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Группы форм */
+.form-group {
+    margin-bottom: 15px; /* Отступ между группами */
+}
+
+/* Метка */
+label {
+    display: block; /* Отображение блока */
+    margin-bottom: 5px; /* Отступ снизу */
+    color: #666; /* Цвет текста метки */
+}
+
+input {
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Цвет рамки при фокусе на поле ввода */
+input:focus {
+    border-color: #007BFF; /* Цвет рамки при фокусе */
+    outline: none; /* Удаление обводки */
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    display: block; /* Отображение блока */
+    color: red; /* Цвет текста ошибки */
+    font-size: 0.875rem; /* Размер шрифта */
+    margin-top: 5px; /* Отступ сверху */
+}
+
+/* Кнопка отправки */
+button {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #007BFF; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 1rem; /* Размер шрифта */
+    cursor: pointer; /* Указатель курсора */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Нижний контейнер */
+.form-footer {
+    display: flex; /* Флекс-контейнер */
+    justify-content: space-between; /* Разделение ссылок */
+    margin-top: 15px; /* Отступ сверху */
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
