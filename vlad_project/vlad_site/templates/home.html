@@ -6,111 +6,172 @@
     <title>Форум Программистов</title>
     <link rel="stylesheet"> <!-- Подключение CSS файла -->
     <style>
+        /* Общие стили */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
         }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            color: #ffffff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
-        .welcome {
-            background: #e2e2e2;
-            padding: 20px;
-            border-radius: 5px;
+
+        /* Шапка */
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+
+        header h1 {
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Герой секция */
+        .hero {
+            background: #77aaff;
+            color: #fff;
+            padding: 60px 0;
             text-align: center;
         }
-        .topics, .latest-posts {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
-        .box {
-            background: #ffffff;
-            padding: 20px;
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 48%;
         }
+
+        .hero .btn:hover {
+            background: #555;
+        }
+
+        /* Особенности */
+        .features {
+            padding: 40px 0;
+            background: #fff;
+        }
+
+        .features .feature {
+            float: left;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .features .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .features .feature p {
+            font-size: 1em;
+        }
+
+        /* Подвал */
         footer {
-            background: #35424a;
-            color: #ffffff;
+            background: #333;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
 {% include 'navbar.html' %}
 <header>
-    <h1>Форум Программистов</h1>
-    <nav>
-        <a href="#">Главная</a>
-        <a href="#">Темы</a>
-        <a href="#">Новые сообщения</a>
-        <a href="#">Поиск</a>
-        <a href="#">Профиль</a>
-        <a href="#">Помощь</a>
-    </nav>
+    <div class="container">
+        <h1>Форум программистов</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Форумы</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<div class="container">
-    <div class="welcome">
+<section class="hero">
+    <div class="container">
         <h2>Добро пожаловать на форум программистов!</h2>
-        <p>Здесь вы можете обсудить свои проекты, задать вопросы и обменяться опытом с единомышленниками.</p>
+        <p>Обсуждайте, делитесь знаниями и находите решения вместе с нами.</p>
+        <a href="#" class="btn">Присоединиться</a>
     </div>
+</section>
 
-    <div class="topics">
-        <div class="box">
-            <h3>Популярные темы</h3>
-            <ul>
-                <li><a href="#">Тема 1: Заголовок обсуждения</a></li>
-                <li><a href="#">Тема 2: Заголовок обсуждения</a></li>
-                <li><a href="#">Тема 3: Заголовок обсуждения</a></li>
-                <li><a href="#">Тема 4: Заголовок обсуждения</a></li>
-                <li><a href="#">Тема 5: Заголовок обсуждения</a></li>
-            </ul>
+<section class="features">
+    <div class="container">
+        <div class="feature">
+            <h3>Обсуждения</h3>
+            <p>Присоединяйтесь к обсуждениям на различные темы программирования.</p>
         </div>
-
-        <div class="box">
-            <h3>Последние сообщения</h3>
-            <ul>
-                <li><strong>Пользователь1:</strong> в теме "<em>Тема 1</em>" - *12 января, 10:00*</li>
-                <li><strong>Пользователь2:</strong> в теме "<em>Тема 2</em>" - *12 января, 09:30*</li>
-                <li><strong>Пользователь3:</strong> в теме "<em>Тема 3</em>" - *12 января, 09:00*</li>
-                <li><strong>Пользователь4:</strong> в теме "<em>Тема 4</em>" - *11 января, 18:45*</li>
-                <li><strong>Пользователь5:</strong> в теме "<em>Тема 5</em>" - *11 января, 17:15*</li>
-            </ul>
+        <div class="feature">
+            <h3>Помощь</h3>
+            <p>Получайте помощь от опытных программистов и помогайте другим.</p>
+        </div>
+        <div class="feature">
+            <h3>Ресурсы</h3>
+            <p>Делитесь полезными ресурсами и учитесь новому.</p>
         </div>
     </div>
+</section>
 
-    <footer>
-        © 2025 Форум Программистов. Все права защищены. |
-        <a href="#" style="color:white;">Политика конфиденциальности</a> |
-        <a href="#" style="color:white;">Условия использования</a>
-    </footer>
-
-</div>
-
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Форум программистов. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>

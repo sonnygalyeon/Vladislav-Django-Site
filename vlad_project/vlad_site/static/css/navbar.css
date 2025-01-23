@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #333; /* Dark background */
+    background-image: url("../images/navbar_background.jpg"); /* Dark background */
     color: white; /* Text color */
     padding: 15px; /* Padding for better spacing */
 }
@@ -25,3 +25,4 @@
     padding: 5px; /* Add padding on hover */
     border-radius: 5px; /* Rounded corners on hover */
 }
+
