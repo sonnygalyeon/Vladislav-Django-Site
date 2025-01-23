@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #333; /* Dark background */
+    color: white; /* Text color */
+    padding: 15px; /* Padding for better spacing */
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+    display: flex; /* Display items horizontally */
+    justify-content: space-around; /* Space items evenly */
+}
+
+.navbar li {
+    margin-right: 20px; /* Space between items */
+}
+
+.navbar a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar a:hover {
+    background-color: #575757; /* Darker background on hover */
+    padding: 5px; /* Add padding on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}

@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    background: url("../images/background2.jpg");
 }
 
 /* Контейнер */
@@ -12,7 +12,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    background: url("../images/background.jpg");
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -70,4 +70,35 @@ footer {
     background-color: #007BFF;
     color: white;
     border-radius: 10px;
+}
+
+.category-list {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+    display: flex; /* Display items horizontally */
+    flex-wrap: wrap; /* Wrap items to the next line if necessary */
+}
+
+.category-list li {
+    background-color: white; /* Background color for each item */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 10px; /* Space between items */
+    padding: 20px; /* Padding for better spacing */
+    width: calc(33.33% - 20px); /* Make items responsive */
+    text-align: center; /* Center text and image */
+    cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.category-list li:hover {
+    background-color: #f4f4f4; /* Change background on hover */
+}
+
+
+
+
+.icons {
+    width: 65px;
+    height: 55px;
+    margin-right: 20px;
 }
