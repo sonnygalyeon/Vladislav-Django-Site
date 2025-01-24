@@ -3,175 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форум Программистов</title>
-    <link rel="stylesheet"> <!-- Подключение CSS файла -->
+    <title>CodeHub - Ресурсы для разработчиков</title>
     <style>
-        /* Общие стили */
+        :root {
+            --primary: #2F80ED;
+            --secondary: #56CCF2;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+            --success: #6FCF97;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', system-ui;
+            background: var(--light);
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            overflow-x: hidden;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        /* Шапка */
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-
-        header h1 {
-            float: left;
-            margin: 0;
-            padding: 0;
-        }
-
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-
-        header nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        header nav ul li {
-            display: inline;
-            margin-left: 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Герой секция */
         .hero {
-            background: #77aaff;
-            color: #fff;
-            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 8rem 2rem;
             text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
-        .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .hero .btn {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
         }
 
-        .hero .btn:hover {
-            background: #555;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            background: var(--light);
         }
 
-        /* Особенности */
-        .features {
-            padding: 40px 0;
-            background: #fff;
+        .feature-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
-        .features .feature {
-            float: left;
-            width: 30%;
-            padding: 10px;
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .cta-section {
+            background: var(--dark);
+            color: var(--light);
+            padding: 6rem 5%;
             text-align: center;
         }
 
-        .features .feature h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .features .feature p {
-            font-size: 1em;
+        .button:hover {
+            background: transparent;
+            border-color: var(--light);
+            transform: scale(1.05);
         }
 
-        /* Подвал */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-image {
+            width: 200px;
+            margin: 2rem auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
         footer {
-            background: #333;
-            color: #fff;
+            background: var(--dark);
+            color: var(--light);
+            padding: 3rem 5%;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
         }
 
-        footer p {
-            margin: 0;
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-{% include 'navbar.html' %}
-<header>
-    <div class="container">
-        <h1>Форум программистов</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Форумы</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h2>Добро пожаловать на форум программистов!</h2>
-        <p>Обсуждайте, делитесь знаниями и находите решения вместе с нами.</p>
-        <a href="#" class="btn">Присоединиться</a>
-    </div>
-</section>
-
-<section class="features">
-    <div class="container">
-        <div class="feature">
-            <h3>Обсуждения</h3>
-            <p>Присоединяйтесь к обсуждениям на различные темы программирования.</p>
+    <nav class="nav">
+        <a href="#" class="logo">CodeHub</a>
+        <div class="nav-links">
+            <a href="#features" class="button">Возможности</a>
         </div>
-        <div class="feature">
-            <h3>Помощь</h3>
-            <p>Получайте помощь от опытных программистов и помогайте другим.</p>
-        </div>
-        <div class="feature">
-            <h3>Ресурсы</h3>
-            <p>Делитесь полезными ресурсами и учитесь новому.</p>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2023 Форум программистов. Все права защищены.</p>
-    </div>
-</footer>
+    <section class="hero">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">🚀 Стань мастером кода</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Изучай, создавай, вдохновляйся вместе с сообществом</p>
+        <img src="https://img.icons8.com/clouds/200/000000/code.png" class="hero-image" alt="Coding">
+        <a href="#features" class="button" style="margin-top: 2rem;">Начать путешествие</a>
+    </section>
+
+    <section id="features" class="features-grid">
+        <div class="feature-card">
+            <h2>💻 Интерактивное обучение</h2>
+            <p>Практические задания с мгновенной проверкой кода</p>
+        </div>
+
+        <div class="feature-card">
+            <h2>👥 Сообщество</h2>
+            <p>Общайся с разработчиками со всего мира</p>
+        </div>
+
+        <div class="feature-card">
+            <h2>📚 Ресурсы</h2>
+            <p>База знаний с примерами и шаблонами</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Готов к старту?</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/login" class="button">Присоединиться</a>
+            <a href="/about" class="button" style="background: var(--success);">Курсы</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 CodeHub. Все права защищены</p>
+        <div style="margin-top: 2rem;">
+            <a href="#" style="color: var(--light); margin: 0 1rem;">Политика конфиденциальности</a>
+            <a href="#" style="color: var(--light); margin: 0 1rem;">Контакты</a>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Анимация при скролле
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.feature-card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Динамическое изменение шапки при скролле
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255,255,255,0.95)';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(255,255,255,0.1)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

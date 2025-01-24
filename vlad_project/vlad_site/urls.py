@@ -26,6 +26,13 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('about/', views.about_page, name='about'),
+    path('about/python', views.python_about_view, name='about_python'),
+    path('about/csharp', views.csharp_about_view, name='about_csharp'),
+    path('about/php', views.php_about_view, name='about_php'),
+    path('about/ht', views.html_about_view, name='about_html'),
+    path('about/ruby', views.ruby_about_view, name='about_ruby'),
+    path('about/java', views.java_about_view, name='about_java'),
+    path('about/js', views.javascript_about_view, name='about_js'),
 
     # AUTHS
     path('register/', views.register_view, name='register'),

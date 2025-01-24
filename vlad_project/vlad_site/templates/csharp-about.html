@@ -1,10 +1,57 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования C#</title>
+    <link rel="stylesheet" href="{% static 'css/csharp_style.css' %}">
 </head>
 <body>
+<header>
+    <h1>C#</h1>
+    <p>Мощный и универсальный язык программирования от Microsoft</p>
+</header>
 
+<main>
+    <section id="about">
+        <h2>О языке</h2>
+        <p>C# — это современный объектно-ориентированный язык программирования, разработанный компанией Microsoft. Он
+            широко используется для создания настольных приложений, веб-приложений, игр и многого другого.</p>
+    </section>
+
+    <section id="features">
+        <h2>Особенности</h2>
+        <ul>
+            <li>Высокая производительность</li>
+            <li>Поддержка многопоточности</li>
+            <li>Интеграция с платформой .NET</li>
+            <li>Богатая стандартная библиотека</li>
+        </ul>
+    </section>
+
+    <section id="code-example">
+        <h2>Пример кода</h2>
+        <pre><code id="code">
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Привет, Мир!");
+    }
+}
+            </code></pre>
+        <button onclick="runCode()">Запустить код</button>
+        <p id="output"></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Информация о C#</p>
+</footer>
+
+<script src="{% static 'scripts/csharp_about.js' %}}"></script>
 </body>
 </html>

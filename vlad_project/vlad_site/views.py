@@ -61,3 +61,31 @@ def register_view(request):
     #             return render(request, 'register.html')
 
     return render(request, 'register.html')
+
+
+def python_about_view(request):
+    return render(request, 'python-about.html')
+
+
+def php_about_view(request):
+    return render(request, 'php-about.html')
+
+
+def csharp_about_view(request):
+    return render(request, 'csharp-about.html')
+
+
+def javascript_about_view(request):
+    return render(request, 'js-about.html')
+
+
+def java_about_view(request):
+    return render(request, 'java-about.html')
+
+
+def ruby_about_view(request):
+    return render(request, 'ruby-about.html')
+
+
+def html_about_view(request):
+    return render(request, 'html-about.html')

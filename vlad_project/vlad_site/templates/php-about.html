@@ -1,10 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования PHP</title>
+    <link rel="stylesheet" href="{% static 'css/php_styles.css' %}">
 </head>
 <body>
+    <header>
+        <h1>PHP</h1>
+        <p>Серверный язык программирования для веб-разработки</p>
+    </header>
 
+    <main>
+        <section id="about">
+            <h2>О языке</h2>
+            <p>PHP — это популярный серверный язык программирования, который широко используется для создания динамических веб-сайтов и веб-приложений. Он легко интегрируется с HTML и поддерживает множество баз данных.</p>
+        </section>
+
+        <section id="features">
+            <h2>Особенности</h2>
+            <ul>
+                <li>Простота в изучении и использовании</li>
+                <li>Широкая поддержка хостингов</li>
+                <li>Интеграция с популярными CMS (WordPress, Joomla, Drupal)</li>
+                <li>Большое сообщество и множество библиотек</li>
+            </ul>
+        </section>
+
+        <section id="code-example">
+            <h2>Пример кода</h2>
+            <pre><code id="code">
+&lt;?php
+    echo "Привет, Мир!";
+?&gt;
+            </code></pre>
+            <button onclick="runCode()">Запустить код</button>
+            <p id="output"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Информация о PHP</p>
+    </footer>
+
+    <script src="{% static 'scripts/php_about.js' %}"></script>
 </body>
 </html>

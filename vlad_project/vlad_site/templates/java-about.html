@@ -1,10 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования Java</title>
+    <link rel="stylesheet" href="{% static 'css/java_styles.css' %}">
 </head>
 <body>
+    <header>
+        <h1>Java</h1>
+        <p>Мощный и универсальный язык программирования для создания кроссплатформенных приложений</p>
+    </header>
 
+    <main>
+        <section id="about">
+            <h2>О языке</h2>
+            <p>Java — это высокоуровневый, объектно-ориентированный язык программирования, который широко используется для создания enterprise-приложений, мобильных приложений (Android), веб-приложений и многого другого.</p>
+        </section>
+
+        <section id="features">
+            <h2>Особенности</h2>
+            <ul>
+                <li>Кроссплатформенность (Write Once, Run Anywhere)</li>
+                <li>Богатая стандартная библиотека</li>
+                <li>Автоматическое управление памятью (Garbage Collection)</li>
+                <li>Многопоточность</li>
+            </ul>
+        </section>
+
+        <section id="code-example">
+            <h2>Пример кода</h2>
+            <pre><code id="code">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Привет, Мир!");
+    }
+}
+            </code></pre>
+            <button onclick="runCode()">Запустить код</button>
+            <p id="output"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Информация о Java</p>
+    </footer>
+
+    <script src="{% static 'scripts/java_about.js' %}"></script>
 </body>
 </html>

@@ -1,10 +1,57 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык разметки HTML</title>
+    <link rel="stylesheet" href="{% static 'css/html_style.css' %}">
 </head>
 <body>
+    <header>
+        <h1>HTML</h1>
+        <p>Язык разметки для создания структуры веб-страниц</p>
+    </header>
 
+    <main>
+        <section id="about">
+            <h2>О языке</h2>
+            <p>HTML (HyperText Markup Language) — это стандартный язык разметки, используемый для создания структуры веб-страниц. Он определяет элементы страницы, такие как заголовки, абзацы, ссылки и изображения.</p>
+        </section>
+
+        <section id="features">
+            <h2>Особенности</h2>
+            <ul>
+                <li>Простота в изучении и использовании</li>
+                <li>Совместимость со всеми браузерами</li>
+                <li>Поддержка мультимедиа (изображения, видео, аудио)</li>
+                <li>Интеграция с CSS и JavaScript</li>
+            </ul>
+        </section>
+
+        <section id="code-example">
+            <h2>Пример кода</h2>
+            <pre><code id="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Пример HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, Мир!&lt;/h1&gt;
+    &lt;p&gt;Это пример HTML-страницы.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <button onclick="runCode()">Запустить код</button>
+            <p id="output"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Информация о HTML</p>
+    </footer>
+
+    <script src="{% static 'scripts/html_about.js' %}"></script>
 </body>
 </html>

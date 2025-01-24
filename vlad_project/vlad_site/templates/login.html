@@ -1,27 +1,213 @@
-{% load static %}
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHub - Вход</title>
+    <style>
+        :root {
+            --primary: #2F80ED;
+            --secondary: #6C5CE7;
+            --dark: #2D3436;
+            --light: #FFFFFF;
+            --error: #FF7675;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.1);
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin: 0 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: var(--primary);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="filler">
-        <div class="form-container">
-            <form method="POST">
-                <div class="input-block">
-                    <label for="">Login</label>
-                    <input type="text">
-                </div>
-                <div class="input-block">
-                    <label for="">Password</label>
-                    <input type="password">
-                </div>
-                {% csrf_token %}
-                <button>Log In</button>
-            </form>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://img.icons8.com/clouds/100/000000/lock.png" alt="Secure Login">
+            <h2>Добро пожаловать в CodeHub</h2>
         </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <div class="error-message" id="emailError">Пожалуйста, введите корректный email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" required minlength="6">
+                <div class="error-message" id="passwordError">Пароль должен содержать минимум 6 символов</div>
+            </div>
+            {% csrf_token %}
+            <button type="submit" class="button">Войти</button>
+
+            <div class="links">
+                <a href="#forgot">Забыли пароль?</a>
+                <a href="#signup">Создать аккаунт</a>
+            </div>
+        </form>
     </div>
-</div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Валидация
+            let isValid = true;
+
+            if (!validateEmail(emailInput.value)) {
+                showError(emailInput, emailError);
+                isValid = false;
+            }
+
+            if (passwordInput.value.length < 6) {
+                showError(passwordInput, passwordError);
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Имитация отправки
+                form.classList.add('loading');
+                setTimeout(() => {
+                    form.classList.remove('loading');
+                    alert('Успешный вход! Перенаправляем...');
+                    // window.location.href = '/dashboard';
+                }, 1500);
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(input, errorElement) {
+            input.style.borderColor = 'var(--error)';
+            errorElement.style.display = 'block';
+            setTimeout(() => {
+                input.style.borderColor = '#eee';
+                errorElement.style.display = 'none';
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

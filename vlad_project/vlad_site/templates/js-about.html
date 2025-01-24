@@ -1,10 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования JavaScript</title>
+    <link rel="stylesheet" href="{% static 'css/js_style.css' %}">
 </head>
 <body>
+    <header>
+        <h1>JavaScript</h1>
+        <p>Язык программирования для создания интерактивных веб-страниц</p>
+    </header>
 
+    <main>
+        <section id="about">
+            <h2>О языке</h2>
+            <p>JavaScript — это высокоуровневый, интерпретируемый язык программирования, который используется для создания интерактивных веб-страниц. Он поддерживается всеми современными браузерами и является основой фронтенд-разработки.</p>
+        </section>
+
+        <section id="features">
+            <h2>Особенности</h2>
+            <ul>
+                <li>Интеграция с HTML и CSS</li>
+                <li>Поддержка асинхронного программирования</li>
+                <li>Большое количество фреймворков и библиотек (React, Angular, Vue.js)</li>
+                <li>Кроссплатформенность</li>
+            </ul>
+        </section>
+
+        <section id="code-example">
+            <h2>Пример кода</h2>
+            <pre><code id="code">
+function greet() {
+    console.log("Привет, Мир!");
+}
+
+greet();
+            </code></pre>
+            <button onclick="runCode()">Запустить код</button>
+            <p id="output"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Информация о JavaScript</p>
+    </footer>
+
+    <script src="{% static 'scripts/js_about.js'%}"></script>
 </body>
 </html>

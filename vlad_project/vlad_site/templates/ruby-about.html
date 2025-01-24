@@ -1,10 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Язык программирования Ruby</title>
+    <link rel="stylesheet" href="{% static 'css/ruby_style.css' %}">
 </head>
 <body>
+<header>
+    <h1>Ruby</h1>
+    <p>Элегантный и выразительный язык программирования</p>
+</header>
 
+<main>
+    <section id="about">
+        <h2>О языке</h2>
+        <p>Ruby — это динамический, объектно-ориентированный язык программирования, который сочетает в себе простоту и
+            мощь. Он известен своим элегантным синтаксисом и фреймворком Ruby on Rails.</p>
+    </section>
+
+    <section id="features">
+        <h2>Особенности</h2>
+        <ul>
+            <li>Простота и читаемость кода</li>
+            <li>Полностью объектно-ориентированный</li>
+            <li>Динамическая типизация</li>
+            <li>Мощный фреймворк Ruby on Rails</li>
+        </ul>
+    </section>
+
+    <section id="code-example">
+        <h2>Пример кода</h2>
+        <pre><code id="code">
+def greet(name)
+  puts "Привет, #{name}!"
+end
+
+greet("Мир")
+            </code></pre>
+        <button onclick="runCode()">Запустить код</button>
+        <p id="output"></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Информация о Ruby</p>
+</footer>
+
+<script src="{% static 'scripts/ruby_about.js' %}"></script>
 </body>
 </html>
