@@ -1,34 +1,27 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в систему</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}"> <!-- Link to your CSS file -->
-    <script src="{% static 'scripts/login.js' %}" defer></script> <!-- Link to your JavaScript file -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
 <div class="container">
-    <form class="login-form" method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <h2>Вход в систему</h2>
-        <div class="form-group">
-            <label for="username">Имя пользователя</label>
-            <input type="text" id="username" name="username" required>
-            <span class="error-message" id="username-error"></span>
+    <div class="filler">
+        <div class="form-container">
+            <form method="POST">
+                <div class="input-block">
+                    <label for="">Login</label>
+                    <input type="text">
+                </div>
+                <div class="input-block">
+                    <label for="">Password</label>
+                    <input type="password">
+                </div>
+                {% csrf_token %}
+                <button>Log In</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" id="password" name="password" required>
-            <span class="error-message" id="password-error"></span>
-        </div>
-        <button type="submit">Войти</button>
-        <div class="form-footer">
-            <a href="">Забыли пароль?</a>
-            <a href="/register">Создать аккаунт</a>
-        </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

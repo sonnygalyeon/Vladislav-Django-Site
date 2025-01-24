@@ -1,6 +1,6 @@
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
+from django.shortcuts import redirect, render
+from django.contrib import messages
 
 
 def home(request):
@@ -31,25 +31,33 @@ def rules_of_use(request):
     return render(request, 'rules.html')
 
 
-def login_view(request, user):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return redirect('')
-    else:
-
-        return redirect('login')
+def login_view(request):
+    if request.method == 'POST':
+        login_data = request.POST.get('login')
+        password_data = request.POST.get('password')
+        usr = authenticate(request, username=login_data, password=password_data)
+        if usr is not None:
+            login(request, usr)
+            return redirect('')
+        else:
+            messages.success(request, 'Invalid username or password')
+            return render(request, 'login.html')
+    return render(request, 'login.html')
 
 
 def register_view(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-            login_view(request, user)
+    # if request.method == 'POST':
+    #     login_data = request.POST.get('login')
+    #     password_data = request.POST.get('password')
+    #     password_data2 = request.POST.get('password2')
+    #     if password_data == password_data2:
+    #         CustomUser.objects.create_user(login_data, password_data, password_data2)
+    #         usr = authenticate(request, username=login_data, password=password_data)
+    #
+    #         if usr is not None:
+    #             login(request, usr)
+    #             return redirect('')
+    #         else:
+    #             return render(request, 'register.html')
+
     return render(request, 'register.html')

@@ -1,5 +1,5 @@
 .navbar {
-    background-image: url("../images/navbar_background.jpg"); /* Dark background */
+    background-color: #333; /* Dark background */
     color: white; /* Text color */
     padding: 15px; /* Padding for better spacing */
 }

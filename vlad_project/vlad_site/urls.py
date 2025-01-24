@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import *
 from django.views.generic import TemplateView
+from django.contrib.auth import views as auth_views
 
 from . import views
 
@@ -25,6 +26,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('about/', views.about_page, name='about'),
-    path('login/', views.login_view, name='login'),
+
+    # AUTHS
     path('register/', views.register_view, name='register'),
+    path('login/', views.login_view, name='login'),
 ]

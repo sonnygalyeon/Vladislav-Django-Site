@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="register-form" method="post" action="{% url 'register' %}">
+        <form class="register-form" method="POST" action="{% url 'register' %}">
             {% csrf_token %}
             <h2>Регистрация</h2>
             <div class="form-group">
